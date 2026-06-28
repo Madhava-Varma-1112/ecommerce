@@ -102,14 +102,14 @@ const CheckoutForm = ({ clientSecret, paymentIntentId, totalAmount, isDemoMode, 
   const cardElementOptions = {
     style: {
       base: {
-        color: '#F3F4F6',
+        color: '#0F172A',
         fontFamily: "'Plus Jakarta Sans', sans-serif",
         fontSmoothing: 'antialiased',
         fontSize: '16px',
         '::placeholder': {
-          color: '#6B7280',
+          color: '#64748B',
         },
-        iconColor: '#6366F1',
+        iconColor: '#4F46E5',
       },
       invalid: {
         color: '#EF4444',

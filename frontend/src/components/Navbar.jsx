@@ -18,8 +18,8 @@ const Navbar = () => {
     <nav className="navbar glass-panel">
       <div className="navbar-container">
         <Link to="/" className="navbar-logo">
-          <span className="logo-icon">⚡</span>
-          <span className="logo-text">AURA<span className="gradient-text">SHOP</span></span>
+          <span className="logo-icon">🛒</span>
+          <span className="logo-text">ECO<span className="gradient-text">MMERCE</span></span>
         </Link>
 
         <div className="navbar-links">
