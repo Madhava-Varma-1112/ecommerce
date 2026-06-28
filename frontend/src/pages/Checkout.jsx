@@ -5,6 +5,7 @@ import { Elements, CardElement, useStripe, useElements } from '@stripe/react-str
 import { useCart } from '../context/CartContext';
 import { useAuth } from '../context/AuthContext';
 import './Checkout.css';
+import { API_URL } from '../config';
 
 // Load Stripe Promise
 const stripePromise = loadStripe(
@@ -37,7 +38,7 @@ const CheckoutForm = ({ clientSecret, paymentIntentId, totalAmount, isDemoMode, 
         // Simulating artificial delay for premium look and feel
         await new Promise((resolve) => setTimeout(resolve, 2000));
 
-        const response = await fetch('http://localhost:5000/api/payment/confirm-payment', {
+        const response = await fetch(`${API_URL}/payment/confirm-payment`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -73,7 +74,7 @@ const CheckoutForm = ({ clientSecret, paymentIntentId, totalAmount, isDemoMode, 
 
       if (result.paymentIntent.status === 'succeeded') {
         // Confirm payment status with backend
-        const response = await fetch('http://localhost:5000/api/payment/confirm-payment', {
+        const response = await fetch(`${API_URL}/payment/confirm-payment`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -189,7 +190,7 @@ const Checkout = () => {
 
     const startPaymentIntent = async () => {
       try {
-        const response = await fetch('http://localhost:5000/api/payment/create-payment-intent', {
+        const response = await fetch(`${API_URL}/payment/create-payment-intent`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',

@@ -3,6 +3,7 @@ import { useSearchParams, Link } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
 import { useAuth } from '../context/AuthContext';
 import './CheckoutSuccess.css';
+import { API_URL } from '../config';
 
 const CheckoutSuccess = () => {
   const [searchParams] = useSearchParams();
@@ -26,7 +27,7 @@ const CheckoutSuccess = () => {
       }
 
       try {
-        const response = await fetch('http://localhost:5000/api/payment/confirm-payment', {
+        const response = await fetch(`${API_URL}/payment/confirm-payment`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',

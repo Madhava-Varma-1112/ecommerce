@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import './AdminDashboard.css';
+import { API_URL } from '../config';
 
 const AdminDashboard = () => {
   const { user, token } = useAuth();
@@ -26,12 +27,12 @@ const AdminDashboard = () => {
   // Fetch Dashboard Stats and Products
   const fetchData = async () => {
     try {
-      const statsRes = await fetch('http://localhost:5000/api/admin/stats', {
+      const statsRes = await fetch(`${API_URL}/admin/stats`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       const statsData = await statsRes.json();
 
-      const productsRes = await fetch('http://localhost:5000/api/products');
+      const productsRes = await fetch(`${API_URL}/products`);
       const productsData = await productsRes.json();
 
       if (!statsRes.ok) {
@@ -86,7 +87,7 @@ const AdminDashboard = () => {
     formData.append('image', imageFile);
 
     try {
-      const response = await fetch('http://localhost:5000/api/products', {
+      const response = await fetch(`${API_URL}/products`, {
         method: 'POST',
         headers: {
           Authorization: `Bearer ${token}`,
@@ -128,7 +129,7 @@ const AdminDashboard = () => {
     setSuccessMsg('');
 
     try {
-      const response = await fetch(`http://localhost:5000/api/products/${productId}`, {
+      const response = await fetch(`${API_URL}/products/${productId}`, {
         method: 'DELETE',
         headers: {
           Authorization: `Bearer ${token}`,

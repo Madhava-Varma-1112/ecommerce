@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
 import './ProductDetails.css';
+import { API_URL } from '../config';
 
 const ProductDetails = () => {
   const { id } = useParams();
@@ -16,7 +17,7 @@ const ProductDetails = () => {
   useEffect(() => {
     const fetchProduct = async () => {
       try {
-        const response = await fetch(`http://localhost:5000/api/products/${id}`);
+        const response = await fetch(`${API_URL}/products/${id}`);
         const data = await response.json();
 
         if (!response.ok) {
