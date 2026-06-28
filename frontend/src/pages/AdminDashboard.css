@@ -1,0 +1,264 @@
+.admin-page {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.admin-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 16px;
+}
+
+.admin-header-row h2 {
+  font-size: 2rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.admin-badge {
+  background: rgba(99, 102, 241, 0.15);
+  color: var(--primary);
+  border: 1px solid rgba(99, 102, 241, 0.3);
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 6px 14px;
+  border-radius: var(--radius-sm);
+  text-transform: uppercase;
+}
+
+.success-banner {
+  background: rgba(16, 185, 129, 0.1);
+  color: var(--accent);
+  border: 1px solid rgba(16, 185, 129, 0.2);
+  padding: 12px 16px;
+  border-radius: var(--radius-sm);
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+/* Metrics Dashboard Grid */
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.metric-card {
+  padding: 24px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.metric-icon {
+  font-size: 2.2rem;
+  width: 54px;
+  height: 54px;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--border-color);
+}
+
+.metric-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.metric-label {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.metric-value {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-top: 2px;
+}
+
+/* Split panel layout */
+.admin-panel-layout {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 30px;
+  align-items: start;
+}
+
+.admin-section {
+  padding: 30px;
+  border-radius: var(--radius-md);
+}
+
+.admin-section h3 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 24px;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 14px;
+}
+
+/* Product form styles */
+.admin-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.file-input-custom {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  padding: 8px 12px;
+  cursor: pointer;
+  width: 100%;
+}
+
+.image-upload-preview-box {
+  width: 100%;
+  height: 150px;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.upload-preview {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.text-area-input {
+  resize: vertical;
+}
+
+.submit-product-btn {
+  width: 100%;
+  padding: 12px;
+}
+
+/* Recent purchase tags */
+.no-records-text {
+  color: var(--text-muted);
+  text-align: center;
+  padding: 40px 0;
+  font-size: 0.95rem;
+}
+
+.recent-orders-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-height: 520px;
+  overflow-y: auto;
+  padding-right: 8px;
+}
+
+.order-log-card {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.order-log-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.order-log-user {
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+.order-log-price {
+  font-weight: 800;
+  color: var(--primary);
+}
+
+.order-log-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.order-log-item-tag {
+  background: rgba(255, 255, 255, 0.05);
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  padding: 2px 8px;
+  border-radius: 4px;
+  border: 1px solid var(--border-color);
+}
+
+.order-log-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+/* Table inventory styling */
+.product-management-section {
+  width: 100%;
+}
+
+.table-product-image {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: var(--radius-sm);
+  background: rgba(255, 255, 255, 0.01);
+}
+
+.table-product-info-block {
+  display: flex;
+  flex-direction: column;
+}
+
+.table-product-name {
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.table-product-id {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  font-family: monospace;
+}
+
+.table-product-price {
+  font-weight: 700;
+}
+
+.delete-table-btn {
+  padding: 6px 12px;
+  font-size: 0.85rem;
+}
+
+@media (max-width: 900px) {
+  .admin-panel-layout {
+    grid-template-columns: 1fr;
+  }
+}
